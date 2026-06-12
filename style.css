@@ -524,7 +524,8 @@ input[type="range"]::-webkit-slider-thumb {
     flex: 1; 
     overflow-y: auto; 
     padding-right: 5px; 
-    margin-bottom: 20px; 
+    padding-bottom: 150px; 
+    margin-bottom: 0; 
 }
 
 #full-love-letter { 
@@ -540,8 +541,12 @@ input[type="range"]::-webkit-slider-thumb {
     display: flex; 
     flex-direction: column; 
     gap: 10px; 
-    background-color: #2e5ca8; 
-    padding-top: 10px; 
+    background: linear-gradient(0deg, #2e5ca8 85%, transparent 100%); 
+    padding: 15px 24px 20px 24px; 
+    position: absolute; /* <--- ADICIONE ISSO: Garante que ele fique fixo */
+    bottom: 0;           /* <--- ADICIONE ISSO: Fixa na parte inferior */
+    left: 0;             /* <--- ADICIONE ISSO */
+    z-index: 20;         /* <--- ADICIONE ISSO: Garante que fique acima do texto */
 }
 
 .modal-player-controls { 
