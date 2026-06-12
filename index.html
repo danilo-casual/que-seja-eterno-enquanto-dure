@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Um Presente Especial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <section id="wrapped-screen" class="screen active">
+            <div class="wrapped-header">
+                <i class="fa-solid fa-xmark close-icon"></i>
+                <span class="badge-wrapped">Wrapped</span>
+            </div>
+            <div class="wrapped-card">
+                <h1 class="wrapped-title">
+                    Danilo separou um<br><span class="green-text">presente</span> especial!
+                </h1>
+                <p class="wrapped-subtitle">
+                    Um momento único feito com carinho para celebrar a jornada de vocês
+                </p>
+                <button id="btn-ver-presente" class="btn-presente">Ver Presente</button>
+            </div>
+        </section>
+
+        <section id="player-screen" class="screen hidden">
+            
+            <div class="main-scroll-wrapper">
+
+                <div class="fixed-player-header">
+                    <div class="spotify-top-bar">
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <div class="header-text-center">
+                            <span class="playlist-subtitle">Tocando Sua Playlist favorita</span>
+                            <span class="playlist-title">Que Seja Eterno Enquanto Dure</span>
+                        </div>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </div>
+
+                    <div class="profile-image-container">
+                        <img src="assets/foto-perfil.jpg" alt="Sua Foto" class="profile-image">
+                    </div>
+
+                    <div class="music-info-row">
+                        <div class="marquee-container">
+                            <div class="marquee-text">Harry Styles - Sign of the Times</div>
+                        </div>
+                        <i class="fa-solid fa-circle-check check-icon"></i>
+                    </div>
+                    <div class="artist-name">Harry Styles</div>
+
+                    <div class="progress-container">
+                        <input type="range" id="progress-bar" min="0" max="100" value="0">
+                        <div class="time-stamps">
+                            <span id="current-time">0:00</span>
+                            <span id="total-time">-5:42</span>
+                        </div>
+                    </div>
+
+                    <div class="player-controls">
+                        <i class="fa-solid fa-shuffle control-secondary"></i>
+                        <i class="fa-solid fa-backward-step control-secondary"></i>
+                        <div id="play-pause-container" class="play-btn">
+                            <i id="play-icon" class="fa-solid fa-play"></i>
+                        </div>
+                        <i class="fa-solid fa-forward-step control-secondary"></i>
+                        <i class="fa-solid fa-arrows-rotate control-secondary"></i>
+                    </div>
+                </div>
+
+                <div class="scrollable-content">
+                    
+                    <div class="album-section">
+                        <div class="album-card">
+                            <img src="assets/foto-nos.jpg" alt="Nós" class="album-image">
+                            <span class="album-tag">Nós</span>
+                        </div>
+                        <h2 class="album-title">Danilo e Karol</h2>
+                        <p class="album-subtitle">Juntos desde 2022</p>
+                    </div>
+
+                    <div class="counter-grid">
+                        <div class="counter-card">
+                            <div class="counter-num-box"><span id="years" class="num">0</span></div>
+                            <span class="counter-label">Anos</span>
+                        </div>
+                        <div class="counter-card">
+                            <div class="counter-num-box"><span id="months" class="num">0</span></div>
+                            <span class="counter-label">Meses</span>
+                        </div>
+                        <div class="counter-card">
+                            <div class="counter-num-box"><span id="days" class="num">0</span></div>
+                            <span class="counter-label">Dias</span>
+                        </div>
+                        <div class="counter-card">
+                            <div class="counter-num-box"><span id="hours" class="num">0</span></div>
+                            <span class="counter-label">Horas</span>
+                        </div>
+                        <div class="counter-card">
+                            <div class="counter-num-box"><span id="minutes" class="num">0</span></div>
+                            <span class="counter-label">Minutos</span>
+                        </div>
+                        <div class="counter-card">
+                            <div class="counter-num-box"><span id="seconds" class="num">0</span></div>
+                            <span class="counter-label">Segundos</span>
+                        </div>
+                    </div>
+
+                    <div class="lyrics-card-preview">
+                        <span class="lyrics-preview-tag">Mensagem especial</span>
+                        <p class="lyrics-preview-text">
+                            Viver ao seu lado tem sido meu bálsamo, conhecer um lado diferente seu todos os dias é meu motivo de euforia...
+                        </p>
+                        <button id="btn-mostrar-mensagem" class="btn-lyrics">Mostrar Mensagem</button>
+                    </div>
+
+                    <div class="bottom-spacer"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <div id="lyrics-modal" class="lyrics-full-overlay hidden-lyrics">
+            <div class="lyrics-modal-header">
+                <i id="btn-fechar-mensagem" class="fa-solid fa-chevron-down close-lyrics-icon"></i>
+                <div class="lyrics-modal-title-box">
+                    <div class="marquee-container container-small">
+                        <div class="marquee-text">Harry Styles - Sign of the Times</div>
+                    </div>
+                    <span class="lyrics-modal-sub">Harry Styles</span>
+                </div>
+                <i class="fa-solid fa-flag flag-icon"></i>
+            </div>
+
+            <div class="lyrics-modal-body">
+                <p id="full-love-letter">
+                    Carregando mensagem especial...
+                </p>
+            </div>
+
+            <div class="lyrics-modal-footer">
+                <div class="progress-container">
+                    <input type="range" id="modal-progress-bar" min="0" max="100" value="0">
+                    <div class="time-stamps">
+                        <span id="modal-current-time">0:00</span>
+                        <span id="modal-total-time">-5:42</span>
+                    </div>
+                </div>
+                
+                <div class="modal-player-controls">
+                    <i class="fa-solid fa-shuffle control-secondary"></i>
+                    <i class="fa-solid fa-backward-step control-secondary"></i>
+                    <div id="modal-play-pause-container" class="play-btn small-play">
+                        <i id="modal-play-icon" class="fa-solid fa-play"></i>
+                    </div>
+                    <i class="fa-solid fa-forward-step control-secondary"></i>
+                    <i class="fa-solid fa-arrows-rotate control-secondary"></i>
+                </div>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <div class="nav-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Início</span>
+            </div>
+            <div class="nav-item">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>Buscar</span>
+            </div>
+            <div class="nav-item">
+                <i class="fa-solid fa-book"></i>
+                <span>Sua Biblioteca</span>
+            </div>
+        </nav>
+
+    </div>
+
+    <audio id="music-player" src="assets/musica.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
